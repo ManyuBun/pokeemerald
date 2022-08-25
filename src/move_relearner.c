@@ -1,4 +1,5 @@
 #include "global.h"
+#include "party_menu.h"
 #include "main.h"
 #include "battle.h"
 #include "bg.h"
@@ -672,7 +673,15 @@ static void DoMoveRelearnerMain(void)
         if (!gPaletteFade.active)
         {
             FreeMoveRelearnerResources();
-            SetMainCallback2(CB2_ReturnToField);
+            if (FlagGet(FLAG_PARTY_MOVES))
+			{
+				CB2_ReturnToPartyMenuFromSummaryScreen();
+				FlagClear(FLAG_PARTY_MOVES);
+			}
+			else
+			{
+				SetMainCallback2(CB2_ReturnToField);
+			}
         }
         break;
     case MENU_STATE_FADE_FROM_SUMMARY_SCREEN:
