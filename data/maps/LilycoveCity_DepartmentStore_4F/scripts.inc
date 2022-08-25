@@ -26,9 +26,22 @@ LilycoveCity_DepartmentStore_4F_EventScript_ClerkLeft::
 	.align 2
 LilycoveCity_DepartmentStore_4F_Pokemart_AttackTMs:
 	.2byte ITEM_TM38  @ Fire Blast
+	.2byte ITEM_TM30  @ Shadow Ball
+	.2byte ITEM_TM24  @ Thunderbolt
 	.2byte ITEM_TM25  @ Thunder
+	.2byte ITEM_TM13  @ Ice Beam
+	.2byte ITEM_TM26  @ Earthquake
 	.2byte ITEM_TM14  @ Blizzard
 	.2byte ITEM_TM15  @ Hyper Beam
+	.2byte ITEM_TM04  @ Calm Mind
+	.2byte ITEM_TM27  @ Return
+	.2byte ITEM_TM31  @ Brick Break
+	.2byte ITEM_TM40  @ Aerial Ace
+	.2byte ITEM_TM35  @ Flamethrower
+	.2byte ITEM_TM06  @ Toxic
+	.2byte ITEM_TM26  @ Iron Tail
+	.2byte ITEM_HM07  @ Waterfall
+	.2byte ITEM_HM03  @ Surf
 	.2byte ITEM_NONE
 	release
 	end

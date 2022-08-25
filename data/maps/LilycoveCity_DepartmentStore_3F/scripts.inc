@@ -38,6 +38,10 @@ LilycoveCity_DepartmentStore_3F_Pokemart_Vitamins:
 	.2byte ITEM_MENTAL_HERB
 	.2byte ITEM_WHITE_HERB
 	.2byte ITEM_SOUL_DEW
+	.2byte ITEM_LEFTOVERS
+	.2byte ITEM_HARD_STONE
+	.2byte ITEM_MYSTIC_WATER
+	.2byte ITEM_CHARCOAL
 	.2byte ITEM_NONE
 	release
 	end
