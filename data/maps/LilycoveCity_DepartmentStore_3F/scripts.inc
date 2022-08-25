@@ -40,6 +40,8 @@ LilycoveCity_DepartmentStore_3F_Pokemart_Vitamins:
 	.2byte ITEM_SOUL_DEW
 	.2byte ITEM_LEFTOVERS
 	.2byte ITEM_HARD_STONE
+	.2byte ITEM_BLACK_GLASSES
+	.2byte ITEM_LIGHT_BALL
 	.2byte ITEM_MYSTIC_WATER
 	.2byte ITEM_CHARCOAL
 	.2byte ITEM_NONE
