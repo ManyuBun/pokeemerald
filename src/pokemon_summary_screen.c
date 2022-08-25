@@ -3584,35 +3584,54 @@ static void PrintMoveNameAndPP(u8 moveIndex)
 
 static void PrintMovePowerAndAccuracy(u16 moveIndex)
 {
-    const u8 *text;
-    if (moveIndex != 0)
-    {
-        FillWindowPixelRect(PSS_LABEL_WINDOW_MOVES_POWER_ACC, PIXEL_FILL(0), 53, 0, 19, 32);
+	struct Pokemon *mon = &sMonSummaryScreen->currentMon;
+	u16 species = GetMonData(mon, MON_DATA_SPECIES);
+	const u8 *text;
+	if (moveIndex != 0)
+	{
+		FillWindowPixelRect(PSS_LABEL_WINDOW_MOVES_POWER_ACC, PIXEL_FILL(0), 53, 0, 19, 32);
 
-        if (gBattleMoves[moveIndex].power < 2)
-        {
-            text = gText_ThreeDashes;
-        }
-        else
-        {
-            ConvertIntToDecimalStringN(gStringVar1, gBattleMoves[moveIndex].power, STR_CONV_MODE_RIGHT_ALIGN, 3);
-            text = gStringVar1;
-        }
+		if (moveIndex == MOVE_HIDDEN_POWER)
+		{
+			u8 powerBits = ((GetMonData(mon, MON_DATA_HP_IV) & 2) >> 1)
+				| ((GetMonData(mon, MON_DATA_ATK_IV) & 2) << 0)
+				| ((GetMonData(mon, MON_DATA_DEF_IV) & 2) << 1)
+				| ((GetMonData(mon, MON_DATA_SPEED_IV) & 2) << 2)
+				| ((GetMonData(mon, MON_DATA_SPATK_IV) & 2) << 3)
+				| ((GetMonData(mon, MON_DATA_SPDEF_IV) & 2) << 4);
 
-        PrintTextOnWindow(PSS_LABEL_WINDOW_MOVES_POWER_ACC, text, 53, 1, 0, 0);
+			u8 powerForHiddenPower = (40 * powerBits) / 63 + 30;
 
-        if (gBattleMoves[moveIndex].accuracy == 0)
-        {
-            text = gText_ThreeDashes;
-        }
-        else
-        {
-            ConvertIntToDecimalStringN(gStringVar1, gBattleMoves[moveIndex].accuracy, STR_CONV_MODE_RIGHT_ALIGN, 3);
-            text = gStringVar1;
-        }
+			ConvertIntToDecimalStringN(gStringVar1, powerForHiddenPower, STR_CONV_MODE_RIGHT_ALIGN, 3);
+			text = gStringVar1;
+		}
+		else
+		{
+			if (gBattleMoves[moveIndex].power < 2)
+			{
+				text = gText_ThreeDashes;
+			}
+			else
+			{
+				ConvertIntToDecimalStringN(gStringVar1, gBattleMoves[moveIndex].power, STR_CONV_MODE_RIGHT_ALIGN, 3);
+				text = gStringVar1;
+			}
+		}
 
-        PrintTextOnWindow(PSS_LABEL_WINDOW_MOVES_POWER_ACC, text, 53, 17, 0, 0);
-    }
+		PrintTextOnWindow(PSS_LABEL_WINDOW_MOVES_POWER_ACC, text, 53, 1, 0, 0);
+
+		if (gBattleMoves[moveIndex].accuracy == 0)
+		{
+			text = gText_ThreeDashes;
+		}
+		else
+		{
+			ConvertIntToDecimalStringN(gStringVar1, gBattleMoves[moveIndex].accuracy, STR_CONV_MODE_RIGHT_ALIGN, 3);
+			text = gStringVar1;
+		}
+
+		PrintTextOnWindow(PSS_LABEL_WINDOW_MOVES_POWER_ACC, text, 53, 17, 0, 0);
+	}
 }
 
 static void PrintContestMoves(void)
@@ -3862,15 +3881,34 @@ static void SetMonTypeIcons(void)
 
 static void SetMoveTypeIcons(void)
 {
-    u8 i;
-    struct PokeSummary *summary = &sMonSummaryScreen->summary;
-    for (i = 0; i < MAX_MON_MOVES; i++)
-    {
-        if (summary->moves[i] != MOVE_NONE)
-            SetTypeSpritePosAndPal(gBattleMoves[summary->moves[i]].type, 85, 32 + (i * 16), i + SPRITE_ARR_ID_TYPE);
-        else
-            SetSpriteInvisibility(i + SPRITE_ARR_ID_TYPE, TRUE);
-    }
+	u8 i;
+	struct PokeSummary *summary = &sMonSummaryScreen->summary;
+	struct Pokemon *mon = &sMonSummaryScreen->currentMon;
+	u16 species = GetMonData(mon, MON_DATA_SPECIES);
+	for (i = 0; i < MAX_MON_MOVES; i++)
+	{
+		if (summary->moves[i] != MOVE_NONE) {
+			if (summary->moves[i] == MOVE_HIDDEN_POWER) {
+				u8 typeBits = ((GetMonData(mon, MON_DATA_HP_IV) & 1) << 0)
+					| ((GetMonData(mon, MON_DATA_ATK_IV) & 1) << 1)
+					| ((GetMonData(mon, MON_DATA_DEF_IV) & 1) << 2)
+					| ((GetMonData(mon, MON_DATA_SPEED_IV) & 1) << 3)
+					| ((GetMonData(mon, MON_DATA_SPATK_IV) & 1) << 4)
+					| ((GetMonData(mon, MON_DATA_SPDEF_IV) & 1) << 5);
+
+				u8 type = (15 * typeBits) / 63 + 1;
+				if (type >= TYPE_MYSTERY)
+					type++;
+				type |= 0xC0;
+				SetTypeSpritePosAndPal(type & 0x3F, 85, 32 + (i * 16), i + SPRITE_ARR_ID_TYPE);
+			}
+			else {
+				SetTypeSpritePosAndPal(gBattleMoves[summary->moves[i]].type, 85, 32 + (i * 16), i + SPRITE_ARR_ID_TYPE);
+			}
+		}
+		else
+			SetSpriteInvisibility(i + SPRITE_ARR_ID_TYPE, TRUE);
+	}
 }
 
 static void SetContestMoveTypeIcons(void)
@@ -3888,17 +3926,36 @@ static void SetContestMoveTypeIcons(void)
 
 static void SetNewMoveTypeIcon(void)
 {
-    if (sMonSummaryScreen->newMove == MOVE_NONE)
-    {
-        SetSpriteInvisibility(SPRITE_ARR_ID_TYPE + 4, TRUE);
-    }
-    else
-    {
-        if (sMonSummaryScreen->currPageIndex == PSS_PAGE_BATTLE_MOVES)
-            SetTypeSpritePosAndPal(gBattleMoves[sMonSummaryScreen->newMove].type, 85, 96, SPRITE_ARR_ID_TYPE + 4);
-        else
-            SetTypeSpritePosAndPal(NUMBER_OF_MON_TYPES + gContestMoves[sMonSummaryScreen->newMove].contestCategory, 85, 96, SPRITE_ARR_ID_TYPE + 4);
-    }
+	struct Pokemon *mon = &sMonSummaryScreen->currentMon;
+	u16 species = GetMonData(mon, MON_DATA_SPECIES);
+
+	if (sMonSummaryScreen->newMove == MOVE_NONE)
+	{
+		SetSpriteInvisibility(SPRITE_ARR_ID_TYPE + 4, TRUE);
+	}
+	else
+	{
+		if (sMonSummaryScreen->currPageIndex == PSS_PAGE_BATTLE_MOVES)
+			if (sMonSummaryScreen->newMove == MOVE_HIDDEN_POWER) {
+				u8 typeBits = ((GetMonData(mon, MON_DATA_HP_IV) & 1) << 0)
+					| ((GetMonData(mon, MON_DATA_ATK_IV) & 1) << 1)
+					| ((GetMonData(mon, MON_DATA_DEF_IV) & 1) << 2)
+					| ((GetMonData(mon, MON_DATA_SPEED_IV) & 1) << 3)
+					| ((GetMonData(mon, MON_DATA_SPATK_IV) & 1) << 4)
+					| ((GetMonData(mon, MON_DATA_SPDEF_IV) & 1) << 5);
+
+				u8 type = (15 * typeBits) / 63 + 1;
+				if (type >= TYPE_MYSTERY)
+					type++;
+				type |= 0xC0;
+				SetTypeSpritePosAndPal(type & 0x3F, 85, 96, SPRITE_ARR_ID_TYPE + 4);
+			}
+			else {
+				SetTypeSpritePosAndPal(gBattleMoves[sMonSummaryScreen->newMove].type, 85, 96, SPRITE_ARR_ID_TYPE + 4);
+			}
+		else
+			SetTypeSpritePosAndPal(NUMBER_OF_MON_TYPES + gContestMoves[sMonSummaryScreen->newMove].contestCategory, 85, 96, SPRITE_ARR_ID_TYPE + 4);
+	}
 }
 
 static void SwapMovesTypeSprites(u8 moveIndex1, u8 moveIndex2)
