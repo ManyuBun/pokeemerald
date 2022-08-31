@@ -1170,3 +1170,45 @@ Route104_Text_BrendanPostBattle:
 	.string "making POKéMON battle.\p"
 	.string "Like MR. BRINEY, it's important to\n"
 	.string "become friends with your POKéMON.$"
+
+Route104_EventScript_HexManiacEgg::
+	lock
+	faceplayer
+	msgbox Text_EggQuestion, MSGBOX_YESNO
+	compare VAR_RESULT, 0
+	goto_if_eq Script_PlayerAnsweredNo
+	getpartysize
+	compare VAR_RESULT, 6
+	goto_if_eq Script_PlayerHasFullParty
+	giveegg SPECIES_SNEASEL
+	playfanfare MUS_RG_PHOTO
+	msgbox Text_ReceivedEgg, MSGBOX_DEFAULT
+	waitfanfare
+	release
+	end
+
+
+Script_PlayerHasFullParty::
+	msgbox Text_PlayerHasFullParty, MSGBOX_DEFAULT
+	release
+	end
+
+
+Script_PlayerAnsweredNo::
+	msgbox Text_PlayerAnsweredNo, MSGBOX_DEFAULT
+	release
+	end
+
+Text_EggQuestion:
+	.string "I've got too many of these eggs at home.\n"
+	.string "Can you take one off of my hands?$"
+
+Text_PlayerAnsweredNo:
+	.string "That's a shame. I've got too many.$"
+
+Text_ReceivedEgg:
+	.string "{PLAYER} received the Egg!$"
+
+Text_PlayerHasFullParty:
+	.string "Your party is completely booked.\n"
+	.string "Now both of us don't have room.$"
