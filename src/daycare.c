@@ -413,79 +413,64 @@ static u16 GetEggSpecies(u16 species)
     return species;
 }
 
-static s32 GetParentToInheritNature(struct DayCare *daycare)
+static u8 GetParentToInheritNature(struct DayCare *daycare)
 {
-    u32 species[DAYCARE_MON_COUNT];
-    s32 i;
-    s32 dittoCount;
-    s32 parent = -1;
-
-    // search for female gender
-    for (i = 0; i < DAYCARE_MON_COUNT; i++)
-    {
-        if (GetBoxMonGender(&daycare->mons[i].mon) == MON_FEMALE)
-            parent = i;
-    }
-
-    // search for ditto
-    for (dittoCount = 0, i = 0; i < DAYCARE_MON_COUNT; i++)
-    {
-        species[i] = GetBoxMonData(&daycare->mons[i].mon, MON_DATA_SPECIES);
-        if (species[i] == SPECIES_DITTO)
-            dittoCount++, parent = i;
-    }
-
-    // coin flip on ...two Dittos
-    if (dittoCount == DAYCARE_MON_COUNT)
-    {
-        if (Random() >= USHRT_MAX / 2)
-            parent = 0;
-        else
-            parent = 1;
-    }
-
-    // Don't inherit nature if not holding Everstone
-    if (GetBoxMonData(&daycare->mons[parent].mon, MON_DATA_HELD_ITEM) != ITEM_EVERSTONE
-        || Random() >= USHRT_MAX / 2)
-    {
-        return -1;
-    }
-
-    return parent;
+	u16 motherItem = GetBoxMonData(&daycare->mons[0].mon, MON_DATA_HELD_ITEM);
+	u16 fatherItem = GetBoxMonData(&daycare->mons[1].mon, MON_DATA_HELD_ITEM);
+	if (motherItem == ITEM_EVERSTONE && fatherItem == ITEM_EVERSTONE)
+	{
+		if (Random() >= USHRT_MAX / 2)
+			return 0;
+		else
+			return 1;
+	}
+	else
+	{
+		if (motherItem == ITEM_EVERSTONE)
+		{
+			return 0;
+		}
+		if (fatherItem == ITEM_EVERSTONE)
+		{
+			return 1;
+		}
+	}
+	return 2;
 }
 
 static void _TriggerPendingDaycareEgg(struct DayCare *daycare)
 {
-    s32 parent;
-    s32 natureTries = 0;
+	u8 parent;
+	s32 natureTries = 0;
 
-    SeedRng2(gMain.vblankCounter2);
-    parent = GetParentToInheritNature(daycare);
+	SeedRng2(gMain.vblankCounter2);
+	parent = GetParentToInheritNature(daycare);
 
-    // don't inherit nature
-    if (parent < 0)
-    {
-        daycare->offspringPersonality = (Random2() << 16) | ((Random() % 0xfffe) + 1);
-    }
-    // inherit nature
-    else
-    {
-        u8 wantedNature = GetNatureFromPersonality(GetBoxMonData(&daycare->mons[parent].mon, MON_DATA_PERSONALITY, NULL));
-        u32 personality;
+	// don't inherit nature
+	if (parent > 1)
+	{
+		daycare->offspringPersonality = (Random2() << 16) | ((Random() % 0xfffe) + 1);
+	}
+	// inherit nature
+	else
+	{
+		u8 wantedNature = GetNatureFromPersonality(GetBoxMonData(&daycare->mons[parent].mon, MON_DATA_PERSONALITY, NULL));
 
-        do
-        {
-            personality = (Random2() << 16) | (Random());
-            if (wantedNature == GetNatureFromPersonality(personality) && personality != 0)
-                break; // found a personality with the same nature
+		u32 personality;
 
-            natureTries++;
-        } while (natureTries <= 2400);
+		do
+		{
+			personality = (Random2() << 16) | (Random());
+			if (wantedNature == GetNatureFromPersonality(personality) && personality != 0)
+				break; // found a personality with the same nature
 
-        daycare->offspringPersonality = personality;
-    }
+			natureTries++;
+		} while (natureTries <= 2400);
 
-    FlagSet(FLAG_PENDING_DAYCARE_EGG);
+		daycare->offspringPersonality = personality;
+	}
+
+	FlagSet(FLAG_PENDING_DAYCARE_EGG);
 }
 
 // Functionally unused
