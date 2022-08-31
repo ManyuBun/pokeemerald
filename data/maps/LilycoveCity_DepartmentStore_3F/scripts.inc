@@ -73,6 +73,7 @@ LilycoveCity_DepartmentStore_3F_Pokemart_StatBoosters:
 	.2byte ITEM_MOON_STONE
 	.2byte ITEM_SUN_STONE
 	.2byte ITEM_LEAF_STONE
+	.2byte ITEM_EVERSTONE
 	.2byte ITEM_RARE_CANDY
 	.2byte ITEM_DIVE_BALL
 	.2byte ITEM_MASTER_BALL
