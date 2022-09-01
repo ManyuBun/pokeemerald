@@ -50,3 +50,43 @@ RustboroCity_CuttersHouse_Text_DadHelpedClearLandOfTrees:
 	.string "He made his POKéMON use CUT to clear\n"
 	.string "the land of trees.$"
 
+Script_GiveEggDemoRustboroCutHouse::
+	lock
+	faceplayer
+	msgbox Text_EggQuestionRustboroCutHouse, MSGBOX_YESNO
+	compare VAR_RESULT, 0
+	goto_if_eq Script_PlayerAnsweredNoRustboroCutHouse
+	getpartysize
+	compare VAR_RESULT, 6
+	goto_if_eq Script_PlayerHasFullPartyRustboroCutHouse
+	giveegg SPECIES_EEVEE
+	playfanfare MUS_RG_GAME_FREAK
+	msgbox Text_ReceivedEggRustboroCutHouse, MSGBOX_DEFAULT
+	waitfanfare
+	release
+	end
+
+Script_PlayerHasFullPartyRustboroCutHouse::
+	playmoncry SPECIES_POOCHYENA, CRY_MODE_NORMAL
+	msgbox Text_PlayerHasFullPartyRustboroCutHouse, MSGBOX_DEFAULT
+	release
+	end
+
+Script_PlayerAnsweredNoRustboroCutHouse::
+	playmoncry SPECIES_POOCHYENA, CRY_MODE_NORMAL
+	msgbox Text_PlayerAnsweredNoRustboroCutHouse, MSGBOX_DEFAULT
+	release
+	end
+
+Text_EggQuestionRustboroCutHouse:
+	.string "Grrrrrr?$"
+
+Text_PlayerAnsweredNoRustboroCutHouse:
+	.string "Gao...$"
+
+Text_ReceivedEggRustboroCutHouse:
+	.string "{PLAYER} received the Egg!$"
+
+Text_PlayerHasFullPartyRustboroCutHouse:
+	.string "Your party is full.\n"
+	.string "There's no room for this Egg.$"
