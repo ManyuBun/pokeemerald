@@ -552,7 +552,7 @@
       "elevation": 3,
       "var": "VAR_ROUTE104_STATE",
       "var_value": "1",
-      "script": "Route104_EventScript_HexManiacEgg"
+      "script": "Route104_EventScript_RivalTrigger"
     }
   ],
   "bg_events": [

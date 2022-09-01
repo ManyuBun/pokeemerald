@@ -107,3 +107,44 @@ Route102_Text_RouteSignOldale:
 Route102_Text_RouteSignPetalburg:
 	.string "ROUTE 102\n"
 	.string "{LEFT_ARROW} PETALBURG CITY$"
+
+Script_GiveEggDemo102::
+	lock
+	faceplayer
+	msgbox Text_EggQuestion102, MSGBOX_YESNO
+	compare VAR_RESULT, 0
+	goto_if_eq Script_PlayerAnsweredNo102
+	getpartysize
+	compare VAR_RESULT, 6
+	goto_if_eq Script_PlayerHasFullParty102
+	giveegg SPECIES_LARVITAR
+	playfanfare MUS_RG_GAME_FREAK
+	msgbox Text_ReceivedEgg102, MSGBOX_DEFAULT
+	playmoncry SPECIES_TYRANITAR, CRY_MODE_NORMAL
+	waitfanfare
+	release
+	end
+
+Script_PlayerHasFullParty102::
+	msgbox Text_PlayerHasFullParty102, MSGBOX_DEFAULT
+	release
+	end
+
+Script_PlayerAnsweredNo102::
+	msgbox Text_PlayerAnsweredNo102, MSGBOX_DEFAULT
+	release
+	end
+
+Text_EggQuestion102:
+	.string "Willing to learn about ROCK types?$"
+
+Text_PlayerAnsweredNo102:
+	.string "I guess it's not for everyone.$"
+
+Text_ReceivedEgg102:
+	
+	.string "{PLAYER} received the Egg!$"
+
+Text_PlayerHasFullParty102:
+	.string "Why don't you come back\n"
+	.string "when you have a little more room.$"

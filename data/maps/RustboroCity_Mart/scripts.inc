@@ -52,6 +52,21 @@ RustboroCity_Mart_Pokemart_Expanded:
 	.2byte ITEM_X_SPEED
 	.2byte ITEM_X_ATTACK
 	.2byte ITEM_X_DEFEND
+	.2byte ITEM_WATER_STONE
+	.2byte ITEM_FIRE_STONE
+	.2byte ITEM_THUNDER_STONE
+	.2byte ITEM_SUN_STONE
+	.2byte ITEM_LEAF_STONE
+	.2byte ITEM_EVERSTONE
+	.2byte ITEM_CARBOS
+	.2byte ITEM_PROTEIN
+	.2byte ITEM_ZINC
+	.2byte ITEM_CALCIUM
+	.2byte ITEM_IRON
+	.2byte ITEM_HP_UP
+	.2byte ITEM_PP_UP
+	.2byte ITEM_PREMIER_BALL
+	.2byte ITEM_MASTER_BALL
 	.2byte ITEM_NONE
 	release
 	end

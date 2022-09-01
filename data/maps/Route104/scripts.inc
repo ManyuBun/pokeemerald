@@ -1174,41 +1174,42 @@ Route104_Text_BrendanPostBattle:
 Route104_EventScript_HexManiacEgg::
 	lock
 	faceplayer
-	msgbox Text_EggQuestion, MSGBOX_YESNO
+	msgbox Text_EggQuestion104, MSGBOX_YESNO
 	compare VAR_RESULT, 0
-	goto_if_eq Script_PlayerAnsweredNo
+	goto_if_eq Script_PlayerAnsweredNo104
 	getpartysize
 	compare VAR_RESULT, 6
-	goto_if_eq Script_PlayerHasFullParty
+	goto_if_eq Script_PlayerHasFullParty104
 	giveegg SPECIES_SNEASEL
 	playfanfare MUS_RG_PHOTO
-	msgbox Text_ReceivedEgg, MSGBOX_DEFAULT
+	msgbox Text_ReceivedEgg104, MSGBOX_DEFAULT
+	playmoncry SPECIES_SNEASEL, CRY_MODE_NORMAL
 	waitfanfare
 	release
 	end
 
 
-Script_PlayerHasFullParty::
-	msgbox Text_PlayerHasFullParty, MSGBOX_DEFAULT
+Script_PlayerHasFullParty104::
+	msgbox Text_PlayerHasFullParty104, MSGBOX_DEFAULT
 	release
 	end
 
 
-Script_PlayerAnsweredNo::
-	msgbox Text_PlayerAnsweredNo, MSGBOX_DEFAULT
+Script_PlayerAnsweredNo104::
+	msgbox Text_PlayerAnsweredNo104, MSGBOX_DEFAULT
 	release
 	end
 
-Text_EggQuestion:
+Text_EggQuestion104:
 	.string "I've got too many of these eggs at home.\n"
 	.string "Can you take one off of my hands?$"
 
-Text_PlayerAnsweredNo:
+Text_PlayerAnsweredNo104:
 	.string "That's a shame. I've got too many.$"
 
-Text_ReceivedEgg:
+Text_ReceivedEgg104:
 	.string "{PLAYER} received the Egg!$"
 
-Text_PlayerHasFullParty:
+Text_PlayerHasFullParty104:
 	.string "Your party is completely booked.\n"
 	.string "Now both of us don't have room.$"

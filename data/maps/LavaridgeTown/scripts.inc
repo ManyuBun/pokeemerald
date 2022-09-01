@@ -245,7 +245,7 @@ LavaridgeTown_EventScript_EggWoman::
 	playfanfare MUS_OBTAIN_ITEM
 	message LavaridgeTown_Text_ReceivedTheEgg
 	waitfanfare
-	giveegg SPECIES_EEVEE
+	giveegg SPECIES_KANGASKHAN
 	release
 	end
 
