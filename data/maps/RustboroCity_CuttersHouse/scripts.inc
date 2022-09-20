@@ -90,3 +90,4 @@ Text_ReceivedEggRustboroCutHouse:
 Text_PlayerHasFullPartyRustboroCutHouse:
 	.string "Your party is full.\n"
 	.string "There's no room for this Egg.$"
+

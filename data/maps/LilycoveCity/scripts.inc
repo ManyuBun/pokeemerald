@@ -759,3 +759,11 @@ LilycoveCity_Text_HoneymoonVowToSeeRarePokemon:
 	.string "POKéMON as soon as we arrived.\p"
 	.string "I mean, we are totally happy!$"
 
+LilycoveCity_Text_TravelAgencySign::
+	msgbox Lilycove_Travel_Agency_Textbox, MSGBOX_SIGN
+	end
+
+Lilycove_Travel_Agency_Textbox:
+	.string "Southern Travel Agency:\p"
+	.string "Where dreams come in twos!$"
+
