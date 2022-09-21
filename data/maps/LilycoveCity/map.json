@@ -417,6 +417,13 @@
       "elevation": 0,
       "dest_map": "MAP_SOUTHERN_ISLAND_INTERIOR",
       "dest_warp_id": 0
+    },
+    {
+      "x": 53,
+      "y": 21,
+      "elevation": 0,
+      "dest_map": "MAP_NAVEL_ROCK_ENTRANCE",
+      "dest_warp_id": 0
     }
   ],
   "coord_events": [
