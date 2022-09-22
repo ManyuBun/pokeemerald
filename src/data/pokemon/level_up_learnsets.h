@@ -2963,8 +2963,8 @@ static const u16 sHeracrossLevelUpLearnset[] = {
 };
 
 static const u16 sSneaselLevelUpLearnset[] = {
-    LEVEL_UP_MOVE( 1, MOVE_SCRATCH),
-    LEVEL_UP_MOVE( 1, MOVE_LEER),
+    LEVEL_UP_MOVE( 1, MOVE_ICE_PUNCH),
+    LEVEL_UP_MOVE( 1, MOVE_LOW_KICK),
     LEVEL_UP_MOVE( 1, MOVE_TAUNT),
 	LEVEL_UP_MOVE( 7, MOVE_AERIAL_ACE),
     LEVEL_UP_MOVE( 8, MOVE_QUICK_ATTACK),
