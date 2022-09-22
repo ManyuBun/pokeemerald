@@ -283,16 +283,16 @@ PlayersHouse_2F_Text_HowDoYouLikeYourRoom:
 	.string "They finished moving everything in\n"
 	.string "downstairs, too.\p"
 	.string "POKéMON movers are so convenient!\p"
-	.string "Oh, you should make sure that\n"
-	.string "everything's all there on your desk.$"
+	.string "Don't forget to check your book & PC\n"
+	.string "for ITEMS I've packed before going!$"
 
 PlayersHouse_2F_Text_Notebook:
 	.string "{PLAYER} flipped open the notebook.\p"
 	.string "ADVENTURE RULE NO. 1\n"
-	.string "Open the MENU with START.\p"
+	.string "Hold the R Button to toggle run!\p"
 	.string "ADVENTURE RULE NO. 2\n"
 	.string "Record your progress with SAVE.\p"
-	.string "The remaining pages are blank…$"
+	.string "You can relearn moves anytime!$"
 
 Common_Text_LookCloserAtMap:
 	.string "{PLAYER} took a closer look at the\n"
