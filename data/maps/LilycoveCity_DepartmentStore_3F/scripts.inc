@@ -82,6 +82,8 @@ LilycoveCity_DepartmentStore_3F_Pokemart_StatBoosters:
 	.2byte ITEM_LUXURY_BALL
 	.2byte ITEM_TIMER_BALL
 	.2byte ITEM_REPEAT_BALL
+	.2byte ITEM_MAX_REVIVE
+	.2byte ITEM_SACRED_ASH
 	.2byte ITEM_NONE
 	release
 	end

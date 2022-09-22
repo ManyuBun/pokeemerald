@@ -224,10 +224,14 @@ static const struct MenuAction sItemStorage_MenuActions[] =
 
 static const struct ItemSlot sNewGamePCItems[] =
 {
-    { ITEM_FULL_RESTORE, 1 },
+	{ ITEM_FULL_RESTORE, 6 },
 	{ ITEM_DIVE_BALL, 1 },
 	{ ITEM_MASTER_BALL, 5 },
 	{ ITEM_CARBOS, 26 },
+	{ ITEM_PROTEIN, 26 },
+	{ ITEM_CALCIUM, 26 },
+	{ ITEM_SACRED_ASH, 1 },
+	{ ITEM_MAX_REVIVE, 1 },
     { ITEM_NONE, 0 }
 };
 
