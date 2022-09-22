@@ -107,3 +107,12 @@ NavelRock_Top_Movement_HoOhAppear:
 	walk_in_place_down
 	walk_in_place_down
 	step_end
+
+NavelRock_EventScript_RebattleSign::
+	msgbox NavelRockTop_RebattleSign, MSGBOX_SIGN
+	end
+
+NavelRockTop_RebattleSign:
+	.string "To rebattle HO-OH, please re-enter the\n"
+	.string "roof by re-entering through the ladder.$"
+
