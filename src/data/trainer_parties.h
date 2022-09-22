@@ -9050,8 +9050,8 @@ static const struct TrainerMonItemCustomMoves sParty_MayLilycoveTorchic[] = {
     .iv = 150,
     .lvl = 32,
     .species = SPECIES_LUDICOLO,
-    .heldItem = ITEM_NONE,
-    .moves = {MOVE_NONE, MOVE_NONE, MOVE_NONE, MOVE_NONE}
+    .heldItem = ITEM_MYSTIC_WATER,
+    .moves = {MOVE_HELPING_HAND, MOVE_SURF, MOVE_GIGA_DRAIN, MOVE_ICY_WIND}
     },
     {
     .iv = 150,
