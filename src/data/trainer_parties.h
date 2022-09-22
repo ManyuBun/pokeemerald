@@ -3373,10 +3373,10 @@ static const struct TrainerMonItemCustomMoves sParty_Roxanne1[] = {
     .moves = {MOVE_TACKLE, MOVE_DEFENSE_CURL, MOVE_ROCK_THROW, MOVE_ROCK_TOMB}
     },
     {
-    .iv = 100,
+    .iv = 220,
     .lvl = 12,
-    .species = SPECIES_NONE,
-    .heldItem = ITEM_NONE,
+    .species = SPECIES_LARVITAR,
+    .heldItem = ITEM_QUICK_CLAW,
     .moves = {MOVE_TACKLE, MOVE_DEFENSE_CURL, MOVE_ROCK_THROW, MOVE_ROCK_TOMB}
     },
     {
