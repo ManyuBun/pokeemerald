@@ -288,10 +288,10 @@ PlayersHouse_2F_Text_HowDoYouLikeYourRoom:
 
 PlayersHouse_2F_Text_Notebook:
 	.string "{PLAYER} flipped open the notebook.\p"
-	.string "ADVENTURE RULE NO. 1\n"
+	.string "Helpful TRAILER TIPS!\n"
 	.string "Hold the R Button to toggle run!\p"
-	.string "ADVENTURE RULE NO. 2\n"
-	.string "Record your progress with SAVE.\p"
+	.string "New evolutions bring new moves!\n"
+	.string "Check Change Moves after evolving!.\p"
 	.string "You can relearn moves anytime!$"
 
 Common_Text_LookCloserAtMap:
