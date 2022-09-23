@@ -369,10 +369,33 @@
 
 #define F_TRAINER_FEMALE (1 << 7)
 
-// All trainer parties specify the IV, level, and species for each Pokémon in the
-// party. Some trainer parties also specify held items and custom moves for each
-// Pokémon.
+// Set to buff up all trained pokemon that use .iv instead of .ivs
+#define TRAINER_IV_MODIFIER       0
+// These are unused.
 #define F_TRAINER_PARTY_CUSTOM_MOVESET (1 << 0)
 #define F_TRAINER_PARTY_HELD_ITEM      (1 << 1)
+#define F_TRAINER_PARTY_CUSTOM_MON     (1 << 2)
+
+#define TRAINER_MON_DEFENSES   1
+#define TRAINER_MON_SPEED_PHYS 2
+#define TRAINER_MON_SPEED_SPEC 3
+#define TRAINER_MON_HP_DEF     4
+#define TRAINER_MON_HP_SPDEF   5
+#define TRAINER_MON_PHYS       6
+#define TRAINER_MON_SPEC       7
+
+#define TRAINER_MON_FEMALE     1
+#define TRAINER_MON_MALE       2
+
+#define TRAINER_MON_FRIENDLY     1
+#define TRAINER_MON_UNFRIENDLY   2
+
+#define TRAINER_EASIEST 1
+#define TRAINER_EASY    2
+#define TRAINER_MEDIUM  3
+#define TRAINER_HARD    4
+#define TRAINER_HARDER  5
+#define TRAINER_HARDEST 6
+#define TRAINER_MAX     7 // Maxes out effort values; is not player legal.
 
 #endif  // GUARD_TRAINERS_H
