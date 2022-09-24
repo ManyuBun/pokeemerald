@@ -28,6 +28,14 @@ RustboroCity_Mart_Pokemart_Basic:
 	.2byte ITEM_X_SPEED
 	.2byte ITEM_X_ATTACK
 	.2byte ITEM_X_DEFEND
+	.2byte ITEM_WATER_STONE
+	.2byte ITEM_FIRE_STONE
+	.2byte ITEM_THUNDER_STONE
+	.2byte ITEM_LEAF_STONE
+	.2byte ITEM_SUN_STONE
+	.2byte ITEM_DIVE_BALL
+	.2byte ITEM_MAX_REVIVE
+	.2byte ITEM_SOUL_DEW
 	.2byte ITEM_NONE
 	release
 	end
