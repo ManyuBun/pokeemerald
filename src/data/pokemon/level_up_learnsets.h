@@ -3466,7 +3466,7 @@ static const u16 sPupitarLevelUpLearnset[] = {
 };
 
 static const u16 sTyranitarLevelUpLearnset[] = {
-    LEVEL_UP_MOVE( 1, MOVE_BITE),
+    LEVEL_UP_MOVE( 1, MOVE_SNORE),
     LEVEL_UP_MOVE( 1, MOVE_SUPERPOWER),
     LEVEL_UP_MOVE( 1, MOVE_SANDSTORM),
     LEVEL_UP_MOVE( 1, MOVE_SCREECH),
