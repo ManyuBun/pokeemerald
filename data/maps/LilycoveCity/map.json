@@ -422,7 +422,7 @@
       "x": 53,
       "y": 21,
       "elevation": 0,
-      "dest_map": "MAP_NAVEL_ROCK_ENTRANCE",
+      "dest_map": "MAP_NAVEL_ROCK_FORK",
       "dest_warp_id": 0
     }
   ],
