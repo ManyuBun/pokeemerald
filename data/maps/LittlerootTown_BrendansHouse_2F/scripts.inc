@@ -291,7 +291,7 @@ PlayersHouse_2F_Text_Notebook:
 	.string "Helpful TRAILER TIPS!\n"
 	.string "Hold the R Button to toggle run!\p"
 	.string "New evolutions bring new moves!\n"
-	.string "Check Change Moves after evolving!.\p"
+	.string "Check Change Moves after evolving!\p"
 	.string "You can relearn moves anytime!$"
 
 Common_Text_LookCloserAtMap:
