@@ -31,18 +31,32 @@ OldaleTown_Mart_ExpandedItems::
 	.align 2
 OldaleTown_Mart_Pokemart_Expanded:
 	.2byte ITEM_POKE_BALL
+	.2byte ITEM_GREAT_BALL
+	.2byte ITEM_ULTRA_BALL
 	.2byte ITEM_LUXURY_BALL
 	.2byte ITEM_DIVE_BALL
+	.2byte ITEM_PREMIER_BALL
+	.2byte ITEM_REPEAT_BALL
+	.2byte ITEM_MASTER_BALL
+	.2byte ITEM_LUM_BERRY
 	.2byte ITEM_CARBOS
 	.2byte ITEM_ZINC
 	.2byte ITEM_PROTEIN
 	.2byte ITEM_CALCIUM
 	.2byte ITEM_HP_UP
 	.2byte ITEM_PP_MAX
+	.2byte ITEM_LEFTOVERS
+	.2byte ITEM_MYSTIC_WATER
+	.2byte ITEM_CHARCOAL
+	.2byte ITEM_MIRACLE_SEED
 	.2byte ITEM_POTION
 	.2byte ITEM_ANTIDOTE
 	.2byte ITEM_PARALYZE_HEAL
 	.2byte ITEM_AWAKENING
+	.2byte ITEM_OLD_ROD
+	.2byte ITEM_GOOD_ROD
+	.2byte ITEM_SUPER_ROD
+	.2byte ITEM_POKEBLOCK_CASE
 	.2byte ITEM_NONE
 	release
 	end

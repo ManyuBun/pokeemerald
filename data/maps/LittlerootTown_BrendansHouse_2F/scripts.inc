@@ -278,7 +278,7 @@ PlayersHouse_2F_Text_ClockIsStopped:
 
 PlayersHouse_2F_Text_HowDoYouLikeYourRoom:
 	.string "MOM: {PLAYER}, how do you like your\n"
-	.string "new room?\p"
+	.string "new room?\p"	
 	.string "Good! Everything's put away neatly!\p"
 	.string "They finished moving everything in\n"
 	.string "downstairs, too.\p"
@@ -289,6 +289,8 @@ PlayersHouse_2F_Text_HowDoYouLikeYourRoom:
 PlayersHouse_2F_Text_Notebook:
 	.string "{PLAYER} flipped open the notebook.\p"
 	.string "Helpful TRAILER TIPS!\n"
+	.string "Use the L and R buttons in \p"
+	.string "summary to see POKéMON IVs and EVs!\n"
 	.string "Hold the R Button to toggle run!\p"
 	.string "New evolutions bring new moves!\n"
 	.string "Check Change Moves after evolving!\p"
