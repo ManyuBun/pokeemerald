@@ -222,7 +222,7 @@ MauvilleCity_BikeShop_Text_ChoseAcroBike:
 
 MauvilleCity_BikeShop_Text_ComeBackToSwitchBikes:
 	.string "RYDEL: If you want to switch modes\n"
-	.string "On the BIKE use the R Button!$"
+	.string "while riding, use the R Button!$"
 
 MauvilleCity_BikeShop_Text_WantToSwitchBikes:
 	.string "RYDEL: Oh? Were you thinking about\n"
