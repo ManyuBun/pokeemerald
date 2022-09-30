@@ -8756,7 +8756,7 @@ static const struct TrainerMon sParty_WallyVR2[] = {
     .iv = 150,
     .lvl = 47,
     .species = SPECIES_ALTARIA,
-    .moves = {MOVE_AERIAL_ACE, MOVE_SAFEGUARD, MOVE_DRAGON_BREATH, MOVE_DRAGON_DANCE}
+    .moves = {MOVE_AERIAL_ACE, MOVE_HEAT_WAVE, MOVE_DRAGON_BREATH, MOVE_DRAGON_DANCE}
     },
     {
     .iv = 150,
@@ -8779,8 +8779,9 @@ static const struct TrainerMon sParty_WallyVR2[] = {
     {
     .iv = 250,
     .lvl = 48,
-    .species = SPECIES_GARDEVOIR,
-    .moves = {MOVE_DOUBLE_TEAM, MOVE_CALM_MIND, MOVE_PSYCHIC, MOVE_FUTURE_SIGHT}
+	.species = SPECIES_GARDEVOIR,
+	.heldItem = ITEM_LEFTOVERS,
+	.moves = {MOVE_ICE_PUNCH, MOVE_CALM_MIND, MOVE_PSYCHIC, MOVE_THUNDER_PUNCH}
     }
 };
 
@@ -8789,7 +8790,7 @@ static const struct TrainerMon sParty_WallyVR3[] = {
     .iv = 150,
     .lvl = 50,
     .species = SPECIES_ALTARIA,
-    .moves = {MOVE_AERIAL_ACE, MOVE_SAFEGUARD, MOVE_DRAGON_BREATH, MOVE_DRAGON_DANCE}
+    .moves = {MOVE_AERIAL_ACE, MOVE_HEAT_WAVE, MOVE_DRAGON_BREATH, MOVE_DRAGON_DANCE}
     },
     {
     .iv = 150,
@@ -8812,8 +8813,9 @@ static const struct TrainerMon sParty_WallyVR3[] = {
     {
     .iv = 250,
     .lvl = 51,
-    .species = SPECIES_GARDEVOIR,
-    .moves = {MOVE_DOUBLE_TEAM, MOVE_CALM_MIND, MOVE_PSYCHIC, MOVE_FUTURE_SIGHT}
+	.species = SPECIES_GARDEVOIR,
+	.heldItem = ITEM_LEFTOVERS,
+	.moves = {MOVE_ICE_PUNCH, MOVE_CALM_MIND, MOVE_PSYCHIC, MOVE_THUNDER_PUNCH}
     }
 };
 
@@ -8822,7 +8824,7 @@ static const struct TrainerMon sParty_WallyVR4[] = {
     .iv = 150,
     .lvl = 53,
     .species = SPECIES_ALTARIA,
-    .moves = {MOVE_AERIAL_ACE, MOVE_SAFEGUARD, MOVE_DRAGON_BREATH, MOVE_DRAGON_DANCE}
+    .moves = {MOVE_AERIAL_ACE, MOVE_HEAT_WAVE, MOVE_DRAGON_BREATH, MOVE_DRAGON_DANCE}
     },
     {
     .iv = 150,
@@ -8845,8 +8847,9 @@ static const struct TrainerMon sParty_WallyVR4[] = {
     {
     .iv = 250,
     .lvl = 54,
-    .species = SPECIES_GARDEVOIR,
-    .moves = {MOVE_DOUBLE_TEAM, MOVE_CALM_MIND, MOVE_PSYCHIC, MOVE_FUTURE_SIGHT}
+	.species = SPECIES_GARDEVOIR,
+	.heldItem = ITEM_LEFTOVERS,
+	.moves = {MOVE_ICE_PUNCH, MOVE_CALM_MIND, MOVE_PSYCHIC, MOVE_THUNDER_PUNCH}
     }
 };
 
@@ -8855,7 +8858,7 @@ static const struct TrainerMon sParty_WallyVR5[] = {
     .iv = 150,
     .lvl = 56,
     .species = SPECIES_ALTARIA,
-    .moves = {MOVE_AERIAL_ACE, MOVE_SAFEGUARD, MOVE_DRAGON_BREATH, MOVE_DRAGON_DANCE}
+    .moves = {MOVE_AERIAL_ACE, MOVE_HEAT_WAVE, MOVE_DRAGON_BREATH, MOVE_DRAGON_DANCE}
     },
     {
     .iv = 150,
@@ -8876,10 +8879,11 @@ static const struct TrainerMon sParty_WallyVR5[] = {
     .moves = {MOVE_SUPERSONIC, MOVE_THUNDERBOLT, MOVE_TRI_ATTACK, MOVE_SCREECH}
     },
     {
-    .iv = 250,
+    .iv = 255,
     .lvl = 57,
     .species = SPECIES_GARDEVOIR,
-    .moves = {MOVE_DOUBLE_TEAM, MOVE_CALM_MIND, MOVE_PSYCHIC, MOVE_FUTURE_SIGHT}
+	.heldItem = ITEM_LEFTOVERS,
+    .moves = {MOVE_ICE_PUNCH, MOVE_CALM_MIND, MOVE_PSYCHIC, MOVE_THUNDER_PUNCH}
     }
 };
 
