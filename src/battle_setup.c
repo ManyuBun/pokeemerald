@@ -925,13 +925,13 @@ static void CB2_EndFirstBattle(void)
 
 static void TryUpdateGymLeaderRematchFromWild(void)
 {
-    if (GetGameStat(GAME_STAT_WILD_BATTLES) % 60 == 0)
+    if (GetGameStat(GAME_STAT_WILD_BATTLES) % 0 == 0)
         UpdateGymLeaderRematch();
 }
 
 static void TryUpdateGymLeaderRematchFromTrainer(void)
 {
-    if (GetGameStat(GAME_STAT_TRAINER_BATTLES) % 20 == 0)
+    if (GetGameStat(GAME_STAT_TRAINER_BATTLES) % 0 == 0)
         UpdateGymLeaderRematch();
 }
 
@@ -1574,28 +1574,27 @@ static void SetRematchIdForTrainer(const struct RematchTrainer *table, u32 table
 
 static bool32 UpdateRandomTrainerRematches(const struct RematchTrainer *table, u16 mapGroup, u16 mapNum)
 {
-    s32 i;
-    bool32 ret = FALSE;
+	s32 i;
+	bool32 ret = FALSE;
 
-    for (i = 0; i <= REMATCH_SPECIAL_TRAINER_START; i++)
-    {
-        if (table[i].mapGroup == mapGroup && table[i].mapNum == mapNum && !IsRematchForbidden(i))
-        {
-            if (gSaveBlock1Ptr->trainerRematches[i] != 0)
-            {
-                // Trainer already wants a rematch. Don't bother updating it.
-                ret = TRUE;
-            }
-            else if (FlagGet(FLAG_MATCH_CALL_REGISTERED + i)
-             && (Random() % 100) <= 30)  // 31% chance of getting a rematch.
-            {
-                SetRematchIdForTrainer(table, i);
-                ret = TRUE;
-            }
-        }
-    }
+	for (i = 0; i <= REMATCH_SPECIAL_TRAINER_START; i++)
+	{
+		if (table[i].mapGroup == mapGroup && table[i].mapNum == mapNum && !IsRematchForbidden(i))
+		{
+			if (gSaveBlock1Ptr->trainerRematches[i] != 0)
+			{
+				// Trainer already wants a rematch. Don't bother updating it.
+				ret = TRUE;
+			}
+			else if (FlagGet(FLAG_MATCH_CALL_REGISTERED + i))
+			{
+				SetRematchIdForTrainer(table, i);
+				ret = TRUE;
+			}
+		}
+	}
 
-    return ret;
+	return ret;
 }
 
 void UpdateRematchIfDefeated(s32 rematchTableId)
