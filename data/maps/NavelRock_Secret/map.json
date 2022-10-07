@@ -1,0 +1,41 @@
+{
+  "id": "MAP_NAVEL_ROCK_SECRET",
+  "name": "NavelRock_Secret",
+  "layout": "LAYOUT_NAVEL_ROCK_SECRET",
+  "music": "MUS_HG_RADIO_BUENA",
+  "region_map_section": "MAPSEC_NAVEL_ROCK",
+  "requires_flash": false,
+  "weather": "WEATHER_NONE",
+  "map_type": "MAP_TYPE_UNDERGROUND",
+  "allow_cycling": true,
+  "allow_escaping": true,
+  "allow_running": true,
+  "show_map_name": true,
+  "battle_scene": "MAP_BATTLE_SCENE_NORMAL",
+  "connections": 0,
+  "object_events": [
+
+  ],
+  "warp_events": [
+    {
+      "x": 14,
+      "y": 28,
+      "elevation": 0,
+      "dest_map": "MAP_NAVEL_ROCK_FORK",
+      "dest_warp_id": 3
+    }
+  ],
+  "coord_events": [
+
+  ],
+  "bg_events": [
+    {
+      "type": "sign",
+      "x": 14,
+      "y": 0,
+      "elevation": 0,
+      "player_facing_dir": "BG_EVENT_PLAYER_FACING_ANY",
+      "script": "NavelRock_Secret_Pc"
+    }
+  ]
+}

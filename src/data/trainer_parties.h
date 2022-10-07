@@ -12506,3 +12506,53 @@ static const struct TrainerMon sParty_MayLinkPlaceholder[] = {
     }
 };
 
+static const struct TrainerMon sParty_Gin[] = {
+	{
+	.iv = 255,
+	.lvl = 100,
+	.nickname = _("PHLOSION"),
+	.species = SPECIES_TYPHLOSION,
+	.heldItem = ITEM_BRIGHT_POWDER,
+	.moves = {MOVE_THUNDER_PUNCH, MOVE_FIRE_BLAST, MOVE_EARTHQUAKE, MOVE_SWIFT}
+	},
+	{
+	.iv = 255,
+	.lvl = 100,
+	.nickname = _("GETIC"),
+	.species = SPECIES_TOGETIC,
+	.heldItem = ITEM_SITRUS_BERRY,
+	.moves = {MOVE_PSYCHIC, MOVE_ENCORE, MOVE_SUNNY_DAY, MOVE_SOLAR_BEAM}
+	},
+	{
+	.iv = 255,
+	.lvl = 100,
+	.nickname = _("TANK"),
+	.species = SPECIES_MILTANK,
+	.heldItem = ITEM_KINGS_ROCK,
+	.moves = {MOVE_BODY_SLAM, MOVE_SHADOW_BALL, MOVE_MILK_DRINK, MOVE_HEAL_BELL}
+	},
+	{
+	.iv = 255,
+	.lvl = 100,
+	.nickname = _("RETRESS"),
+	.species = SPECIES_FORRETRESS,
+	.heldItem = ITEM_SILK_SCARF,
+	.moves = {MOVE_DOUBLE_EDGE, MOVE_SPIKES, MOVE_EXPLOSION, MOVE_PROTECT}
+	},
+	{
+	.iv = 255,
+	.lvl = 100,
+	.nickname = _("CROSS"),
+	.species = SPECIES_HERACROSS,
+	.heldItem = ITEM_FOCUS_BAND,
+	.moves = {MOVE_ENDURE, MOVE_MEGAHORN, MOVE_EARTHQUAKE, MOVE_REVERSAL}
+	},
+	{
+	.iv = 255,
+	.lvl = 100,
+	.nickname = _("TURN"),
+	.species = SPECIES_LANTURN,
+	.heldItem = ITEM_LEFTOVERS,
+	.moves = {MOVE_HYDRO_PUMP, MOVE_THUNDER, MOVE_ICE_BEAM, MOVE_THUNDER_WAVE}
+	}
+};

@@ -11114,4 +11114,17 @@ const struct Trainer gTrainers[] = {
         .party = {.TrainerMon = sParty_MayLinkPlaceholder},
     },
 
+	[TRAINER_J_GIN] =
+	{
+		.trainerClass = TRAINER_CLASS_RIVAL,
+		.encounterMusic_gender = TRAINER_ENCOUNTER_MUSIC_MALE,
+		.trainerPic = TRAINER_PIC_J_GIN,
+		.trainerName = _("GIN"),
+		.items = {},
+		.doubleBattle = TRUE,
+		.aiFlags = AI_SCRIPT_CHECK_BAD_MOVE | AI_SCRIPT_TRY_TO_FAINT | AI_SCRIPT_CHECK_VIABILITY | AI_SCRIPT_DOUBLE_BATTLE,
+		.partySize = ARRAY_COUNT(sParty_Gin),
+		.party = {.TrainerMon = sParty_Gin},
+	},
+
 };

@@ -423,7 +423,7 @@
       "y": 21,
       "elevation": 0,
       "dest_map": "MAP_NAVEL_ROCK_FORK",
-      "dest_warp_id": 0
+      "dest_warp_id": 4
     }
   ],
   "coord_events": [
