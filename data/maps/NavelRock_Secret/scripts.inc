@@ -7,12 +7,13 @@ NavelRock_Secret_Pc::
 	msgbox Text_GinFightPrompt, MSGBOX_YESNO
 	compare VAR_RESULT, 0
 	goto_if_eq Script_PlayerAnsweredNoNavelRockSecret
-	DoSpecialTrainerBattle TRAINER_J_GIN, NavelRock_Secret_GinDefeat
+	trainerbattle_no_intro TRAINER_J_GIN, NavelRock_Secret_GinDefeat
 	release
 	end
 
 Script_PlayerAnsweredNoNavelRockSecret::
-	.string "ABORTING PROGRAM...$"
+	release
+	end
 
 Text_GinFightPrompt::
 	.string "INITIALIZING PROGRAM...\n"
