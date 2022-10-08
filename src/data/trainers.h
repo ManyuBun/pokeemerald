@@ -11116,7 +11116,7 @@ const struct Trainer gTrainers[] = {
 
 	[TRAINER_J_GIN] =
 	{
-		.trainerClass = TRAINER_CLASS_RIVAL,
+		.trainerClass = TRAINER_CLASS_J_GIN,
 		.encounterMusic_gender = TRAINER_ENCOUNTER_MUSIC_MALE,
 		.trainerPic = TRAINER_PIC_J_GIN,
 		.trainerName = _("GIN"),

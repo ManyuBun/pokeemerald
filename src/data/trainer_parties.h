@@ -12510,6 +12510,7 @@ static const struct TrainerMon sParty_Gin[] = {
 	{
 	.iv = 255,
 	.lvl = 100,
+	.evs = {255,255,255,255,255,255},
 	.nickname = _("PHLOSION"),
 	.species = SPECIES_TYPHLOSION,
 	.heldItem = ITEM_BRIGHT_POWDER,
