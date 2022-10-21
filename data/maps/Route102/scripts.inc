@@ -117,7 +117,7 @@ Script_GiveEggDemo102::
 	getpartysize
 	compare VAR_RESULT, 6
 	goto_if_eq Script_PlayerHasFullParty102
-	giveegg SPECIES_LARVITAR
+	givecustommon SPECIES_LARVITAR, 5, ITEM_HARD_STONE, ITEM_PREMIER_BALL, NATURE_ADAMANT, 1
 	playfanfare MUS_RG_GAME_FREAK
 	msgbox Text_ReceivedEgg102, MSGBOX_DEFAULT
 	playmoncry SPECIES_TYRANITAR, CRY_MODE_NORMAL
@@ -143,7 +143,7 @@ Text_PlayerAnsweredNo102:
 
 Text_ReceivedEgg102:
 	
-	.string "{PLAYER} received the Egg!$"
+	.string "{PLAYER} received the POKEMON!$"
 
 Text_PlayerHasFullParty102:
 	.string "Why don't you come back\n"
