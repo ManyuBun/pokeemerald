@@ -1180,7 +1180,7 @@ Route104_EventScript_HexManiacEgg::
 	getpartysize
 	compare VAR_RESULT, 6
 	goto_if_eq Script_PlayerHasFullParty104
-	giveegg SPECIES_SNEASEL
+	givecustommon SPECIES_SNEASEL, 5, ITEM_LEFTOVERS, ITEM_PREMIER_BALL, NATURE_ADAMANT, 1
 	playfanfare MUS_RG_PHOTO
 	msgbox Text_ReceivedEgg104, MSGBOX_DEFAULT
 	playmoncry SPECIES_SNEASEL, CRY_MODE_NORMAL
@@ -1201,14 +1201,14 @@ Script_PlayerAnsweredNo104::
 	end
 
 Text_EggQuestion104:
-	.string "I've got too many of these eggs at home.\n"
-	.string "Can you take one off of my hands?$"
+	.string "I've got too many eggs at home.\n"
+	.string "Can you take POKéMON off my hands?$"
 
 Text_PlayerAnsweredNo104:
 	.string "That's a shame. I've got too many.$"
 
 Text_ReceivedEgg104:
-	.string "{PLAYER} received the Egg!$"
+	.string "{PLAYER} received the POKéMON!$"
 
 Text_PlayerHasFullParty104:
 	.string "Your party is completely booked.\n"

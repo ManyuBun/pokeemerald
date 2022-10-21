@@ -143,7 +143,7 @@ Text_PlayerAnsweredNo102:
 
 Text_ReceivedEgg102:
 	
-	.string "{PLAYER} received the POKEMON!$"
+	.string "{PLAYER} received the POKéMON!$"
 
 Text_PlayerHasFullParty102:
 	.string "Why don't you come back\n"
