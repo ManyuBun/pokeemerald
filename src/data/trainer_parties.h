@@ -3389,23 +3389,23 @@ static const struct TrainerMon sParty_Roxanne1[] = {
     {
     .iv = 100,
     .lvl = 12,
-    .species = SPECIES_GEODUDE,
+    .species = SPECIES_LILEEP,
     .heldItem = ITEM_NONE,
-    .moves = {MOVE_TACKLE, MOVE_DEFENSE_CURL, MOVE_ROCK_THROW, MOVE_ROCK_TOMB}
+    .moves = {MOVE_MEGA_DRAIN, MOVE_SANDSTORM, MOVE_STRING_SHOT, MOVE_ROCK_TOMB}
     },
     {
     .iv = 220,
     .lvl = 12,
     .species = SPECIES_LARVITAR,
-    .heldItem = ITEM_QUICK_CLAW,
-    .moves = {MOVE_TACKLE, MOVE_DEFENSE_CURL, MOVE_ROCK_THROW, MOVE_ROCK_TOMB}
+    .heldItem = ITEM_SHELL_BELL,
+    .moves = {MOVE_FIRE_PUNCH, MOVE_DEFENSE_CURL, MOVE_ICE_PUNCH, MOVE_ROCK_TOMB}
     },
     {
-    .iv = 200,
+    .iv = 220,
     .lvl = 15,
     .species = SPECIES_NOSEPASS,
     .heldItem = ITEM_ORAN_BERRY,
-    .moves = {MOVE_BLOCK, MOVE_HARDEN, MOVE_TACKLE, MOVE_ROCK_TOMB}
+    .moves = {MOVE_THUNDER_PUNCH, MOVE_HARDEN, MOVE_TACKLE, MOVE_ROCK_TOMB}
     }
 };
 
