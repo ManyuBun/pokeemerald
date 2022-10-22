@@ -59,7 +59,7 @@ Script_GiveEggDemoRustboroCutHouse::
 	getpartysize
 	compare VAR_RESULT, 6
 	goto_if_eq Script_PlayerHasFullPartyRustboroCutHouse
-	giveegg SPECIES_EEVEE
+	givecustommon SPECIES_EEVEE, 5, ITEM_LIECHI_BERRY, ITEM_PREMIER_BALL, NUM_NATURES, 1, 0, 0, 0, 0, 0, 0, 30, 30, 30, 30, 30, 30, MOVE_SHADOW_BALL, MOVE_BATON_PASS, MOVE_BODY_SLAM, MOVE_HEAL_BELL, 1
 	playfanfare MUS_RG_GAME_FREAK
 	msgbox Text_ReceivedEggRustboroCutHouse, MSGBOX_DEFAULT
 	waitfanfare
@@ -85,9 +85,9 @@ Text_PlayerAnsweredNoRustboroCutHouse:
 	.string "Gao...$"
 
 Text_ReceivedEggRustboroCutHouse:
-	.string "{PLAYER} received the Egg!$"
+	.string "{PLAYER} received the POKéMON!$"
 
 Text_PlayerHasFullPartyRustboroCutHouse:
 	.string "Your party is full.\n"
-	.string "There's no room for this Egg.$"
+	.string "There's no room for the POKéMON.$"
 

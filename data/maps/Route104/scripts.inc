@@ -1180,7 +1180,7 @@ Route104_EventScript_HexManiacEgg::
 	getpartysize
 	compare VAR_RESULT, 6
 	goto_if_eq Script_PlayerHasFullParty104
-	givecustommon SPECIES_SNEASEL, 5, ITEM_LEFTOVERS, ITEM_PREMIER_BALL, NATURE_ADAMANT, 1
+	givecustommon SPECIES_SNEASEL, 5, ITEM_LIECHI_BERRY, ITEM_POKE_BALL, NATURE_ADAMANT, 0xFF, 0, 0, 0, 0, 0, 0, 30, 30, 30, 30, 30, 30, MOVE_FAKE_OUT, MOVE_SWORDS_DANCE, MOVE_DOUBLE_EDGE, MOVE_KNOCK_OFF, 0
 	playfanfare MUS_RG_PHOTO
 	msgbox Text_ReceivedEgg104, MSGBOX_DEFAULT
 	playmoncry SPECIES_SNEASEL, CRY_MODE_NORMAL
@@ -1202,7 +1202,7 @@ Script_PlayerAnsweredNo104::
 
 Text_EggQuestion104:
 	.string "I've got too many eggs at home.\n"
-	.string "Can you take POKéMON off my hands?$"
+	.string "Can you take a POKéMON off my hands?$"
 
 Text_PlayerAnsweredNo104:
 	.string "That's a shame. I've got too many.$"
