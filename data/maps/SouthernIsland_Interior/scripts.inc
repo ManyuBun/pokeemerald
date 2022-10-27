@@ -140,3 +140,31 @@ SouthernIsland_Interior_Movement_LatiApproach:
 	walk_down
 	walk_down
 	step_end
+
+SouthernIsland_Interior_SignLeft::
+	msgbox SouthernIslandRedDreams, MSGBOX_SIGN
+	setvar VAR_ROAMER_POKEMON, 1
+	setvar VAR_OBJ_GFX_ID_1, OBJ_EVENT_GFX_LATIAS
+	setvar VAR_TEMP_4, SPECIES_LATIAS
+	playmoncry SPECIES_LATIAS, CRY_MODE_NORMAL
+	end
+
+SouthernIslandRedDreams:
+	.string "The decrepit sign says....\p"
+	.string "The crimson flare is extinguished\n"
+	.string "as easily as it becomes ignited.\p"
+	.string "You feel as if your surroundings changed.$"
+
+SouthernIsland_Interior_SignRight::
+	msgbox SouthernIslandBlueDreams, MSGBOX_SIGN
+	setvar VAR_ROAMER_POKEMON, 0
+	setvar VAR_OBJ_GFX_ID_1, OBJ_EVENT_GFX_LATIOS
+	setvar VAR_TEMP_4, SPECIES_LATIOS
+	playmoncry SPECIES_LATIOS, CRY_MODE_NORMAL
+	end
+
+SouthernIslandBlueDreams:
+	.string "The decrepit sign says....\p"
+	.string "The azure spark ceases action\n"
+	.string "as its course becomes grounded out.\p"
+	.string "You feel as if your surroundings changed.$"
