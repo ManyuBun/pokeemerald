@@ -59,7 +59,7 @@ Script_GiveEggDemoRustboroCutHouse::
 	getpartysize
 	compare VAR_RESULT, 6
 	goto_if_eq Script_PlayerHasFullPartyRustboroCutHouse
-	givecustommon SPECIES_EEVEE, 5, ITEM_LIECHI_BERRY, ITEM_PREMIER_BALL, NUM_NATURES, 1, 0, 0, 0, 0, 0, 0, 30, 30, 30, 30, 30, 30, MOVE_SHADOW_BALL, MOVE_BATON_PASS, MOVE_BODY_SLAM, MOVE_HEAL_BELL, 1
+	givecustommon SPECIES_EEVEE, 5, ITEM_SHELL_BELL, ITEM_PREMIER_BALL, NUM_NATURES, 1, 0, 0, 0, 0, 0, 0, 31, 31, 31, 31, 31, 31, MOVE_WISH, MOVE_TICKLE, MOVE_BODY_SLAM, MOVE_HEAL_BELL, 1
 	playfanfare MUS_RG_GAME_FREAK
 	msgbox Text_ReceivedEggRustboroCutHouse, MSGBOX_DEFAULT
 	waitfanfare
